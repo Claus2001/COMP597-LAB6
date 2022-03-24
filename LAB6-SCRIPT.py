@@ -35,7 +35,7 @@ def get_pastebin_string(user_dict):
     #paste.
     tittle = user_dict['forms']['name'], + "'s Abilities"
     body_text = "Name: " +  user_dict['forms']['name'], "\n"
-    body_text += "Abilities:" + user_dict['abilities']['ability']['name']
+    body_text += "Abilities:" + user_dict['abilities']['0']['ability']['name']
     return (tittle, body_text)
 
 def get_user_info(user_num):
