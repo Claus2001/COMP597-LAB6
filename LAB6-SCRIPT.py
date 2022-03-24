@@ -33,15 +33,15 @@ def post_to_pastebin(tittle, body_text):
 def get_pastebin_string(user_dict):
     #2) Create a function that builds the strings to be used for the title and body text of a PasteBin 
     #paste.
-    tittle = user_dict['name'] + "'s Geographical Location"
-    body_text = "Latitude:" + user_dict['address']['geo']['lat'] + "\n"
-    body_text += "Longtitude:" + user_dict['address']['geo']['lng']
+    tittle = user_dict['name'] + "'s Abilities"
+    body_text = "Name: " +  user_dict['forms']['name'], "\n"
+    body_text += "Abilities:" + user_dict['abilities']['ability']['name']
     return (tittle, body_text)
 
 def get_user_info(user_num):
     #1) Create a function that retrieves information for a specified Pokémon from the PokeApi
     print("Getting (pokemon) information...", end="")
-    response = requests.get('https://jsonplaceholder.typicode.com/users/' + str(user_num))
+    response = requests.get('https://pokeapi.co/api/v2/pokemon/' + str(user_num))
 
     if response.status_code == 200:
         print("Success")
