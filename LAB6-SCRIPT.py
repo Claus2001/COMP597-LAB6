@@ -6,7 +6,7 @@ def main():
     user_num = argv[1]
     user_info = get_user_info(user_num)
     if user_info:
-        pastebin_string = (get_pastebin_string(user_info))
+        pastebin_string = get_pastebin_string(user_info)
         pasteBin_url = post_to_pastebin(pastebin_string[0], pastebin_string[1])
         print(pasteBin_url)
 
